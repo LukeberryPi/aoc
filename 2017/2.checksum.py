@@ -54,5 +54,6 @@ def corruption_checksum_two(s: str) -> int:
 
     return result
 
+
 print(corruption_checksum(INPUT))
 print(corruption_checksum_two(INPUT))
