@@ -17,18 +17,17 @@ INPUT = """1224	926	1380	688	845	109	118	88	1275	1306	91	796	102	1361	27	995
 5278	113	4427	569	5167	175	192	3903	155	1051	4121	5140	2328	203	5653	3233"""
 
 
-def spreadsheet_to_2d_array(spreadsheet: str) -> list[list[int]]:
+def spreadsheet_to_matrix(spreadsheet: str) -> list[list[int]]:
     rows = spreadsheet.split("\n")
-    two_dee_array = []
-    for line in rows:
-        two_dee_array.append(line.split("\t"))
+    matrix = []
+    for row in rows:
+        matrix.append(row.split("\t"))
     
-    return [[int(value) for value in lst] for lst in two_dee_array]
-
+    return [[int(value) for value in row] for row in matrix]
 
 def corruption_checksum(s: str) -> int:
     result = 0
-    lines = spreadsheet_to_2d_array(s)
+    lines = spreadsheet_to_matrix(s)
     
     for line in lines:
         result += max(line) - min(line)
@@ -36,17 +35,24 @@ def corruption_checksum(s: str) -> int:
     return result
 
 
-# input exemplo
-print(corruption_checksum("""5 1 9 5
-                          7 5 3
-                          2 4 6 8"""))
-
-# input real
-print(corruption_checksum(INPUT))
-
-
-def corruption_checksum_two(s: str) -> int:
+def list_quotient_sum(lst: list[int]) -> int:
+    for i, value in enumerate(lst):
+        for different_value in lst[i + 1:]:
+            if value % different_value == 0:
+                return value // different_value
+            elif different_value % value == 0:
+                return different_value // value
+    
     return 0;
 
-print(corruption_checksum_two(""))
+def corruption_checksum_two(s: str) -> int:
+    result = 0
+    lines = spreadsheet_to_matrix(s)
+
+    for line in lines:
+        result += list_quotient_sum(line)
+
+    return result
+
+print(corruption_checksum(INPUT))
 print(corruption_checksum_two(INPUT))
