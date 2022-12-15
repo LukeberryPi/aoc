@@ -14,12 +14,6 @@ def inverse_captcha(s: str):
 
     return total
 
-# input exemplo
-print(inverse_captcha("91212129"))
-
-# input real
-print(inverse_captcha(INPUT))
-
 
 def inverse_captcha_two(s: str) -> int:
     total = 0
@@ -31,8 +25,6 @@ def inverse_captcha_two(s: str) -> int:
 
     return total
 
-# input exemplo
-print(inverse_captcha_two("123123"))
 
-# input real
+print(inverse_captcha(INPUT))
 print(inverse_captcha_two(INPUT))
