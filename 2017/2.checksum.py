@@ -16,8 +16,9 @@ INPUT = """1224	926	1380	688	845	109	118	88	1275	1306	91	796	102	1361	27	995
 1356	208	5013	4231	193	169	3152	2543	4430	4070	4031	145	4433	4187	4394	1754
 5278	113	4427	569	5167	175	192	3903	155	1051	4121	5140	2328	203	5653	3233"""
 
+from typing import List
 
-def spreadsheet_to_matrix(spreadsheet: str) -> list[list[int]]:
+def spreadsheet_to_matrix(spreadsheet: str) -> List[List[int]]:
     rows = spreadsheet.split("\n")
     matrix = []
     for row in rows:
@@ -35,7 +36,7 @@ def corruption_checksum(s: str) -> int:
     return result
 
 
-def list_quotient_sum(lst: list[int]) -> int:
+def list_quotient_sum(lst: List[int]) -> int:
     for i, value in enumerate(lst):
         for different_value in lst[i + 1:]:
             if value % different_value == 0:
