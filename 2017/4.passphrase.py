@@ -1,4 +1,4 @@
-EXERCISE_LINK = ""
+EXERCISE_LINK = "https://adventofcode.com/2017/day/4"
 INPUT = """nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
 iix ewj rojvbkk phrij iix zuajnk tadv givslju ewj bda
 isjur jppvano vctnpjp ngwzdq pxqfrk mnxxes zqwgnd giqh
@@ -512,8 +512,10 @@ gye efwwwiv kyv zmtcgmi ifwvwew
 dflx gdtb jyoj jyoj dflx aqhycgi xffnn
 inc mpys mzqmcwx vryz ibqrzc pmsy fat rojpxwy rcbqzi gjef"""
 
+from typing import List
 
-def find_valid_passphrases(s):
+
+def find_valid_passphrases(s: str) -> int:
     valid_passphrases = 0
     passphrase_list = [passphrase.split(" ") for passphrase in s.split("\n")]
 
@@ -523,5 +525,22 @@ def find_valid_passphrases(s):
 
     return valid_passphrases
 
-print(find_valid_passphrases(INPUT))
 
+def remove_anagrams(lst: List[str]) -> List[str]:
+    sorted_strings = list(map(lambda x: sorted(x), lst))
+
+    return list(set([''.join(el) for el in sorted_strings]))
+
+def find_valid_passphrases_two(s: str) -> int:
+    valid_passphrases = 0
+    passphrase_list = [passphrase.split(" ") for passphrase in s.split("\n")]
+
+    for passphrase in passphrase_list:
+        if len(passphrase) == len(set(passphrase)) and len(passphrase) == len(remove_anagrams(passphrase)):
+            valid_passphrases += 1
+
+    return valid_passphrases
+
+
+print(find_valid_passphrases(INPUT))
+print(find_valid_passphrases_two(INPUT))
