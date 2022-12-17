@@ -514,14 +514,14 @@ inc mpys mzqmcwx vryz ibqrzc pmsy fat rojpxwy rcbqzi gjef"""
 
 
 def find_valid_passphrases(s):
-    split_passphrases = s.split("\n");
-    valid_passwords = 0
-    
-    for passhrase in split_passphrases:
-        if len(passhrase.split(" ")) == len(set(passhrase.split(" "))):
-            valid_passwords += 1
+    valid_passphrases = 0
+    passphrase_list = [passphrase.split(" ") for passphrase in s.split("\n")]
 
-    return valid_passwords
+    for passphrase in passphrase_list:
+        if len(passphrase) == len(set(passphrase)):
+            valid_passphrases += 1
+
+    return valid_passphrases
 
 print(find_valid_passphrases(INPUT))
 
