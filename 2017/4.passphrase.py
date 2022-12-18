@@ -527,9 +527,8 @@ def find_valid_passphrases(s: str) -> int:
 
 
 def remove_anagrams(lst: List[str]) -> List[str]:
-    sorted_strings = list(map(lambda x: sorted(x), lst))
 
-    return list(set([''.join(el) for el in sorted_strings]))
+    return list(set([''.join(sorted(el)) for el in lst]))
 
 def find_valid_passphrases_two(s: str) -> int:
     valid_passphrases = 0
