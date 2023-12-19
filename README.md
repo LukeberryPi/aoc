@@ -1,1 +1,1 @@
-solutions to multiple aoc challenges in python and javascript
+solutions to multiple [advent of code](https://adventofcode.com) challenges in python and javascript
