@@ -63,7 +63,7 @@ function extractNumsAndPositions(listIndex = 0, line) {
 }
 
 function gearRatiosTwo(lines) {
-  let result = 1;
+  let result = 0;
   let asteriskPositions = [];
   let numberObjects = [];
 
@@ -77,23 +77,24 @@ function gearRatiosTwo(lines) {
     }
   }
 
-  const filterNumberObjects = numberObjects.filter(item => item.length !== 0);
+  const filteredNumberObjects = numberObjects.filter(item => item.length !== 0).flat();
 
   for (const asteriskPosition of asteriskPositions) {
-    let count = 0;
-    for (const obj of filterNumberObjects.flat()) {
+    let adjacentNumberCount = 0;
+    let product = 1;
+    for (const obj of filteredNumberObjects) {
       const { number, positions } = obj;
       for (const pos of positions) {
-        if (areAdjacent(pos, asteriskPosition)) {
-          count++
-        }
-
-        if (count === 2) {
-          console.log('number', number)
-          result *= number;
+        if (areAdjacent(asteriskPosition, pos)) {
+          adjacentNumberCount++
+          product *= number;
+          break;
         }
       }
-    }
+    } 
+    if (adjacentNumberCount !== 2) continue;
+
+    result += product;
   }
 
   return result;
