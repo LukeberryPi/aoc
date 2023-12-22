@@ -3,32 +3,31 @@ const input = await file.text();
 
 const lines = input.split("\n");
 
-function sumCalibrationNumbers(lines) {
-  const nums = new Set(Array.from("1234567890"));
+function findFirstDigit(str) {
+  for (let i = 0; i < str.length; i++) {
+    if (!isNaN(parseInt(str[i]))) {
+      return str[i];
+    }
+  }
+};
+
+function findLastDigit(str) {
+  for (let i = str.length; i >= 0; i--) {
+    if (!isNaN(parseInt(str[i]))) {
+      return str[i];
+    }
+  }
+};
+
+function main(lines) {
   let sum = 0;
 
-  const findFirstDigit = (str) => {
-    for (let i = 0; i < str.length; i++) {
-      if (nums.has(str[i])) {
-        return str[i];
-      }
-    }
-  };
-
-  const findLastDigit = (str) => {
-    for (let i = str.length; i >= 0; i--) {
-      if (nums.has(str[i])) {
-        return str[i];
-      }
-    }
-  };
-
   for (let line of lines) {
-    let appendDigits = findFirstDigit(line) + findLastDigit(line);
-    sum += Number(appendDigits);
+    let digits = findFirstDigit(line) + findLastDigit(line);
+    sum += +digits;
   }
 
   return sum;
 }
 
-console.log("sumCalibrationNumbers", sumCalibrationNumbers(lines));
+console.log("main", main(lines));
