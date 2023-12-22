@@ -8,7 +8,7 @@ const MAXIMUM_COLOR_VALUES = {
   blue: 14,
 };
 
-function cubeConundrum(games) {
+function main(games) {
   let sumOfPossibleGames = 0;
 
   for (let game of games) {
@@ -30,4 +30,4 @@ function cubeConundrum(games) {
   return sumOfPossibleGames;
 }
 
-console.log("cubeConundrum", cubeConundrum(games));
+console.log("main", main(games));

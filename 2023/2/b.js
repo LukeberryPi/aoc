@@ -3,7 +3,7 @@ const input = await file.text();
 
 const games = input.split("\n");
 
-function cubeConundrumTwo(games) {
+function main(games) {
   let sumOfPower = 0;
 
   for (let game of games) {
@@ -32,4 +32,4 @@ function cubeConundrumTwo(games) {
   return sumOfPower;
 }
 
-console.log("cubeConundrumTwo", cubeConundrumTwo(games));
+console.log("main", main(games));
