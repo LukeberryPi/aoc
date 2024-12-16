@@ -8,7 +8,7 @@ def input_to_lists(s: str) -> Tuple[List[int]]:
 
 def main(s: str) -> int:
     res = 0
-    left, right = input_to_lists(s)[0], input_to_lists(s)[1]
+    left, right = input_to_lists(s)
     for el in left:
         instances_in_right = right.count(el)
         res += el * instances_in_right
