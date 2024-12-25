@@ -2,9 +2,7 @@ import re
 
 # store index for all do()
 # store index for all don't()
-# perform operations only if some index(do) < op < some index(don't)
-
-# find valid ranges
+# perform operations only if some index(do) < op < next index(don't)
 
 def main(s: str):
     res = 0
@@ -14,7 +12,7 @@ def main(s: str):
     dopos = [pos.end() for pos in re.finditer(regdo, s)]
     dontpos = [pos.end() for pos in re.finditer(regdont, s)]
     muls = [mul for mul in re.finditer(regmul, s)]
-    disallowed_ranges = [(dont, next((do for do in dopos if do > dont), dont + 1000000)) for dont in dontpos]
+    disallowed_ranges = [(dont, next((do for do in dopos if do > dont), float("inf"))) for dont in dontpos]
     for mul in muls:
         is_disallowed = any(mul.start() > start and mul.start() < end for [start, end] in disallowed_ranges)
         if is_disallowed: continue
