@@ -17,13 +17,6 @@ def find_letter_coordinates(matrix: List[List[int]], letter: str) -> List[Tuple[
                 pos.append((i, j))
     return pos
 
-def are_adjacent(node1: Tuple[int, int], node2: Tuple[int, int]) -> bool:
-    row1, col1 = node1
-    row2, col2 = node2
-    row_diff = abs(row1 - row2)
-    col_diff = abs(col1 - col2)
-    return row_diff <= 1 and col_diff <= 1 and node1 != node2
-
 def main(s: str):
     count = 0
     matrix = parse(s)
