@@ -1,2 +1,3 @@
-# configurações de editor
 .vscode
+.DS_Store
+.ropeproject
