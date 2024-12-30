@@ -1,6 +1,6 @@
 import re
 
-def main(s: str):
+def main(s: str) -> int:
     reg = "mul\(\d{1,3},\d{1,3}\)"
     ops = re.findall(reg, s)
     res = 0

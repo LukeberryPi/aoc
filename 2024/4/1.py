@@ -14,7 +14,7 @@ def find_letter_coordinates(matrix: list[list[str]], letter: str) -> list[tuple[
                 pos.append((i, j))
     return pos
 
-def main(s: str):
+def main(s: str) -> int:
     count = 0
     matrix = parse(s)
     dic = {}

@@ -3,7 +3,7 @@ def parse(s: str) -> list[list[int]]:
     to_lists = list(map(lambda line: line.split(" "), spl))
     return [[int(x) for x in xs] for xs in to_lists]
 
-def main(s) -> int:
+def main(s: str) -> int:
     lsts = parse(s)
     safe_lists = 0
     for lst in lsts:

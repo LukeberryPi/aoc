@@ -4,7 +4,7 @@ import re
 # store index for all don't()
 # perform operations only if some index(do) < op < next index(don't)
 
-def main(s: str):
+def main(s: str) -> int:
     res = 0
     regdo = "do()"
     regdont = "don't()"
