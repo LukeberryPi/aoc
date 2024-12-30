@@ -1,4 +1,3 @@
-from typing import List
 
 def find_valid_passphrases(s: str) -> int:
     valid_passphrases = 0

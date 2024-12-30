@@ -1,10 +1,9 @@
-from typing import List, Tuple
 
-def parse_rules(s: str) -> List[Tuple[str, ...]]:
+def parse_rules(s: str) -> list[tuple[str, ...]]:
     spl = s.split("\n\n")[0]
     return [tuple(rule.split("|")) for rule in spl.split("\n")]
 
-def parse_updates(s: str) -> List[List[str]]:
+def parse_updates(s: str) -> list[list[str]]:
     spl = s.split("\n\n")[1]
     return [update.split(",") for update in spl.split("\n")]
 
