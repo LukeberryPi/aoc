@@ -31,6 +31,7 @@ def main(s: str) -> int:
             is_invalid = any(rule[0] in afters or rule[1] in befores for rule in relevant_rules)
             if is_invalid:
                 valid = False
+                break
         if not valid:
             correct_order = []
             q = deque([item for item in all_relevant_rule_nodes if in_degree[item] == 0])
