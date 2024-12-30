@@ -24,8 +24,6 @@ def main(s: str) -> int:
         for bef, aft in all_rules_where_both_elements_are_in_the_update:
             graph[bef].append(aft)
             in_degree[aft] += 1
-        # print(f"original list {update} \n ACTUAL relevant rules {all_rules_where_both_elements_are_in_the_update} \n graph {graph} \n in_degree {in_degree} \n\n")
-        # print(f"og update {update} \n all rules where both elements are in the update {all_rules_where_both_elements_are_in_the_update} \n all relevant rule nodes {all_relevant_rule_nodes} \n\n")
         for i, upd in enumerate(update):
             befores = update[:i]
             afters = update[i + 1:]
@@ -43,9 +41,7 @@ def main(s: str) -> int:
                     in_degree[node] -= 1
                     if in_degree[node] == 0:
                         q.append(node)
-            print(correct_order)
             res += int(correct_order[len(correct_order) // 2])
-            # print(f"previous array {update} \n\n correctly ordered array {correct_order} \n\n rules are {relevant_rules} \n\n\n\n")
     return res
 
 with open("2024/5/input.txt") as f:
