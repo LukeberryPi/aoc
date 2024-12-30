@@ -6,7 +6,7 @@ def parse(s: str) -> list[list[str]]:
 # or index all letters and see if they are adjacent in the
 # correct order
 
-def find_letter_coordinates(matrix: list[list[str]], letter: str) -> list[tuple[str, str]]:
+def find_letter_coordinates(matrix: list[list[str]], letter: str) -> list[tuple[int, int]]:
     pos = []
     for i, lst in enumerate(matrix):
         for j in range(len(lst)):
