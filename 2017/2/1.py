@@ -1,6 +1,5 @@
-from typing import List
 
-def spreadsheet_to_matrix(spreadsheet: str) -> List[List[int]]:
+def spreadsheet_to_matrix(spreadsheet: str) -> list[list[int]]:
     rows = spreadsheet.split("\n")
     matrix = []
     for row in rows:

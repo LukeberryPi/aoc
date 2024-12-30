@@ -1,6 +1,4 @@
-from typing import List, Tuple
-
-def input_to_lists(s: str) -> Tuple[List[int], List[int]]:
+def input_to_lists(s: str) -> tuple[list[int], list[int]]:
     to_lines = list(map(lambda line: line.split("   "), s.split("\n")))
     flatten = [int(x) for xs in to_lines for x in xs]
     left, right = flatten[::2], flatten[1::2]

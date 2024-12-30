@@ -1,13 +1,12 @@
-from typing import Tuple, List
 import re
 
-def parse(s: str) -> List[List[str]]:
+def parse(s: str) -> list[list[str]]:
     return [list(x) for x in s.split("\n")]
 
 # for a given A, check for 2 S and 2 M diagonally adjacent
 # same letter cannot be in the same diagonal
 
-def find_letter_coordinates(matrix: List[List[int]], letter: str) -> List[Tuple[int, int]]:
+def find_letter_coordinates(matrix: list[list[int]], letter: str) -> list[tuple[int, int]]:
     pos = []
     for i, lst in enumerate(matrix):
         for j in range(len(lst)):

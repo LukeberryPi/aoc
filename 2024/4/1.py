@@ -1,7 +1,4 @@
-from typing import Tuple, List
-import re
-
-def parse(s: str) -> List[List[str]]:
+def parse(s: str) -> list[list[str]]:
     return [list(x) for x in s.split("\n")]
 
 # every time you find an x, search for m in all directions
@@ -9,7 +6,7 @@ def parse(s: str) -> List[List[str]]:
 # or index all letters and see if they are adjacent in the
 # correct order
 
-def find_letter_coordinates(matrix: List[List[int]], letter: str) -> List[Tuple[int, int]]:
+def find_letter_coordinates(matrix: list[list[str]], letter: str) -> list[tuple[str, str]]:
     pos = []
     for i, lst in enumerate(matrix):
         for j in range(len(lst)):

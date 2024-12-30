@@ -1,6 +1,5 @@
-from typing import List
 
-def remove_anagrams(lst: List[str]) -> List[str]:
+def remove_anagrams(lst: list[str]) -> list[str]:
     return list(set([''.join(sorted(el)) for el in lst]))
 
 def find_valid_passphrases_two(s: str) -> int:

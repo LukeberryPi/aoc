@@ -1,6 +1,5 @@
-from typing import List
 
-def spreadsheet_to_matrix(spreadsheet: str) -> List[List[int]]:
+def spreadsheet_to_matrix(spreadsheet: str) -> list[list[int]]:
     rows = spreadsheet.split("\n")
     matrix = []
     for row in rows:
@@ -8,7 +7,7 @@ def spreadsheet_to_matrix(spreadsheet: str) -> List[List[int]]:
 
     return [[int(value) for value in row] for row in matrix]
 
-def list_quotient_sum(lst: List[int]) -> int:
+def list_quotient_sum(lst: list[int]) -> int:
     for i, value in enumerate(lst):
         for different_value in lst[i + 1:]:
             if value % different_value == 0:

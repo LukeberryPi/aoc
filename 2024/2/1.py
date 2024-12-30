@@ -1,6 +1,4 @@
-from typing import List
-
-def parse(s: str) -> List[List[int]]:
+def parse(s: str) -> list[list[int]]:
     spl = s.split("\n")
     to_lists = list(map(lambda line: line.split(" "), spl))
     return [[int(x) for x in xs] for xs in to_lists]
