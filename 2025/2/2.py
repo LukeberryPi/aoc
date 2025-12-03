@@ -2,7 +2,7 @@ import sys
 
 sys.stdout = open("2025/2/log.txt", "w")
 
-def parse(s: str) -> list[tuple[int, int]]:
+def parse(s: str) -> list[tuple[str, ...]]:
     return [tuple(scope.split("-")) for scope in s.split(",")]
 
 def main(s: str) -> int:

@@ -1,0 +1,51 @@
+current starts at 50
+moves L for 68
+current ends at 82
+0 has been hit 1 times
+
+current starts at 82
+moves L for 30
+current ends at 52
+0 has been hit 1 times
+
+current starts at 52
+moves R for 48
+current ends at 0
+0 has been hit 2 times
+
+current starts at 0
+moves L for 5
+current ends at 95
+0 has been hit 4 times
+
+current starts at 95
+moves R for 60
+current ends at 55
+0 has been hit 5 times
+
+current starts at 55
+moves L for 55
+current ends at 0
+0 has been hit 5 times
+
+current starts at 0
+moves L for 1
+current ends at 99
+0 has been hit 7 times
+
+current starts at 99
+moves L for 99
+current ends at 0
+0 has been hit 7 times
+
+current starts at 0
+moves R for 14
+current ends at 14
+0 has been hit 8 times
+
+current starts at 14
+moves L for 82
+current ends at 32
+0 has been hit 9 times
+
+result 9
