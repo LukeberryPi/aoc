@@ -1,4 +1,4 @@
-def main(s: str):
+def main(s: str) -> int:
     total = 0
 
     if s[-1] == s[0]:
