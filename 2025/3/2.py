@@ -17,18 +17,19 @@ def main(s: str) -> int:
         current_index = 0
         while len(final_battery) < BATTERY_SIZE:
             largest_window_battery = max([int(bat) for bat in window])
-            if largest_window_battery > int(initial[current_index]):
+            if largest_window_battery >= int(initial[current_index]):
                 final_battery += str(largest_window_battery)
-                largest_window_battery_index = bank.find(str(largest_window_battery))
+                largest_window_battery_index = window.find(str(largest_window_battery))
                 current_index += 1
                 window = bank[largest_window_battery_index + 1:-BATTERY_SIZE + current_index]
             else:
                 final_battery += initial[current_index:]
+        print(bank, final_battery, "\n")
         total_joltage += int(final_battery)
     return total_joltage
 
-with open('2025/3/sample.txt') as f:
-    print("part 1 result", main(f.read()))
+with open('2025/3/input.txt') as f:
+    print("part 2 result", main(f.read()))
 
 # {battery_value: int, on: bool, seen: bool}
 # while not all(seen): recalculate battery
