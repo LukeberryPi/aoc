@@ -22,4 +22,4 @@ def main(s: str) -> int:
     return total_joltage
 
 with open('2025/3/input.txt') as f:
-    print("part 1 result", main(f.read()), "\n")
+    print("part 2 result", main(f.read()))
